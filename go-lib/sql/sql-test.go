@@ -11,7 +11,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func main() {
+func main_2() {
 	/* sql.Open () 函数用来打开一个注册过的数据库驱动, mysql 表示数据库驱动名称，
 	第二个参数是 DSN (Data Source Name)，它是 go-sql-driver 定义的一些数据库链接和配置信息
 	支持格式如下:
@@ -19,7 +19,7 @@ func main() {
 	user:password@tcp(localhost:5555)/dbname?charset=utf8
 	user:password@/dbname
 	user:password@tcp([de:ad:be:ef::ca:fe]:80)/dbname */
-	
+
 	db, err := sql.Open("mysql", "root:Morso@2835@/mysite")
 	checkErr(err)
 	stmt, err := db.Prepare("INSERT userinfo SET username=?,department=?,created=?")
