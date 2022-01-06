@@ -115,5 +115,7 @@ func main() {
 	} else {
 		SetConfig(configFile)
 	}
-	fmt.Println(Properties)
+	err := ListenAndServerWithSignal(&Config{
+		Address: fmt.Sprintf("%s:%d", Properties.Bind, Properties.Port), 
+	})
 }
